@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description?: string;
@@ -74,13 +76,9 @@ const { title, description = "Stallvikens Islandshästar - Ridlektioner, hästtr
             </div>
         </div>
     </footer>
+    
+    <script>
+      import '../scripts/main.js';
+    </script>
 </body>
 </html>
-
-<style>
-  @import '../styles/global.css';
-</style>
-
-<script>
-  import '../scripts/main.js';
-</script>
