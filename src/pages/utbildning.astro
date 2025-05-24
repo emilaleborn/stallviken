@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Utbildning & Träning" activeNav="utbildning">
+    <section class="page-header">
+        <div class="container">
+            <h1>Utbildning & Träning</h1>
+            <p>Professionell träning för alla nivåer - från nybörjare till avancerad</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="service-detail">
+            <h2>🏇 Ridlektioner</h2>
+            <p>Vi erbjuder ridlektioner för alla åldrar och nivåer. Våra erfarna instruktörer anpassar undervisningen efter varje ryttares behov och mål.</p>
+            
+            <h3>Privatlektioner</h3>
+            <p>Individuell undervisning där du får fullständig uppmärksamhet från instruktören. Perfekt för dig som vill utvecklas snabbt eller arbeta med specifika moment.</p>
+            
+            <h3>Grupplektioner</h3>
+            <p>Rolig och social ridning i grupp om max 6 ryttare. Grupperna är nivåanpassade för att säkerställa att alla får ut maximalt av lektionen.</p>
+            
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Typ av lektion</th>
+                        <th>Tid</th>
+                        <th>Pris</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Privatlektion</td>
+                        <td>45 min</td>
+                        <td>600 kr</td>
+                    </tr>
+                    <tr>
+                        <td>Gruppelektion</td>
+                        <td>60 min</td>
+                        <td>400 kr</td>
+                    </tr>
+                    <tr>
+                        <td>10-kort privat</td>
+                        <td>45 min/lektion</td>
+                        <td>5 500 kr</td>
+                    </tr>
+                    <tr>
+                        <td>10-kort grupp</td>
+                        <td>60 min/lektion</td>
+                        <td>3 500 kr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="service-detail">
+            <h2>🐎 Hästträning</h2>
+            <p>Vi tar emot hästar för inridning och vidareutbildning. Varje häst får ett individuellt träningsprogram baserat på dess förutsättningar och ägarens mål.</p>
+            
+            <h3>Inridning</h3>
+            <p>Professionell och lugn inridning av unga hästar. Vi lägger stor vikt vid att skapa en positiv grund för hästens framtida ridkarriär.</p>
+            
+            <h3>Vidareutbildning</h3>
+            <p>För hästar som behöver finslipa sina kunskaper eller lära sig nya moment. Vi arbetar med allt från grundläggande lydnad till avancerad gångartsträning.</p>
+            
+            <div class="testimonial">
+                <p>"Min häst kom till Stallviken som en osäker 4-åring och efter 3 månaders träning är han en trygg och fin ridhäst. Fantastiskt arbete!"</p>
+                <div class="testimonial-author">- Maria Andersson</div>
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h2>🎓 Kurser och helgträningar</h2>
+            <p>Vi arrangerar regelbundet kurser och clinics med olika teman. Perfekt för dig som vill fördjupa dina kunskaper inom specifika områden.</p>
+            
+            <h3>Kommande kurser</h3>
+            <ul>
+                <li><strong>Tölthelg för nybörjare</strong> - 15-16 juni<br>
+                Lär dig grunderna i tölt. Max 8 deltagare. Pris: 1 800 kr</li>
+                
+                <li><strong>Gångartsanalys och träning</strong> - 22-23 juni<br>
+                Fördjupning i islandshästens gångarter. Pris: 2 200 kr</li>
+                
+                <li><strong>Tävlingsförberedande kurs</strong> - 6-7 juli<br>
+                För dig som vill börja tävla. Pris: 2 000 kr</li>
+            </ul>
+            
+            <p><strong>Anmälan:</strong> Kontakta oss via telefon eller e-post för att boka din plats.</p>
+        </div>
+
+        <div class="service-detail">
+            <h2>Tölt- och gångartsträning</h2>
+            <p>Specialiserad träning för islandshästens unika gångarter. Vi hjälper dig och din häst att hitta balans och kvalitet i alla gångarter.</p>
+            
+            <h3>Vad ingår:</h3>
+            <ul>
+                <li>Analys av hästens naturliga gångarter</li>
+                <li>Individuellt anpassad träning</li>
+                <li>Tips för hemmaträning</li>
+                <li>Uppföljning och utvärdering</li>
+            </ul>
+            
+            <h3>Målgrupper</h3>
+            <p>Vi välkomnar ryttare i alla åldrar och på alla nivåer:</p>
+            <ul>
+                <li><strong>Nybörjare:</strong> Säker introduktion till ridning och hästhantering</li>
+                <li><strong>Erfarna ryttare:</strong> Finslipning av teknik och avancerad träning</li>
+                <li><strong>Barn från 7 år:</strong> Pedagogisk undervisning med fokus på säkerhet och glädje</li>
+                <li><strong>Vuxna:</strong> Aldrig för sent att börja eller återuppta ridningen</li>
+            </ul>
+        </div>
+
+        <div class="service-detail">
+            <h2>📅 Bokning och information</h2>
+            <p>För att boka lektioner eller få mer information, kontakta oss:</p>
+            <ul>
+                <li>Telefon: 070-123 45 67</li>
+                <li>E-post: info@stallviken.se</li>
+                <li>Besök gärna vår <a href="/kontakt">kontaktsida</a> för fler kontaktuppgifter</li>
+            </ul>
+            
+            <p><strong>Avbokning:</strong> Lektioner måste avbokas senast 24 timmar innan för att undvika debitering.</p>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .page-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .page-header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    
+    .service-detail {
+        margin: 40px 0;
+        padding: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .service-detail h2 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    
+    .service-detail h3 {
+        color: var(--secondary-color);
+        margin: 25px 0 15px;
+    }
+    
+    .service-detail ul {
+        margin-left: 20px;
+        list-style: disc;
+    }
+    
+    .service-detail li {
+        margin: 10px 0;
+    }
+    
+    .price-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    .price-table th,
+    .price-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .price-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .price-table tr:hover {
+        background-color: var(--light-bg);
+    }
+    
+    .testimonial {
+        background-color: var(--light-bg);
+        padding: 20px;
+        border-left: 4px solid var(--primary-color);
+        margin: 20px 0;
+        font-style: italic;
+    }
+    
+    .testimonial-author {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 10px;
+        font-style: normal;
+    }
+    
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+        
+        .price-table {
+            font-size: 0.9rem;
+        }
+        
+        .price-table th,
+        .price-table td {
+            padding: 10px;
+        }
+    }
+</style>

@@ -1,0 +1,86 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const { title, description = "Stallvikens Islandshästar - Ridlektioner, hästträning och islandshästar till salu", activeNav } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <title>{title} - Stallvikens Islandshästar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Stallvikens Islandshästar</h1>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="/" class={activeNav === 'home' ? 'active' : ''}>Hem</a></li>
+                        <li><a href="/utbildning" class={activeNav === 'utbildning' ? 'active' : ''}>Utbildning & träning</a></li>
+                        <li><a href="/om-oss" class={activeNav === 'om-oss' ? 'active' : ''}>Om oss</a></li>
+                        <li><a href="/kontakt" class={activeNav === 'kontakt' ? 'active' : ''}>Kontakt</a></li>
+                        <li><a href="/till-salu" class={activeNav === 'till-salu' ? 'active' : ''}>Hästar till salu</a></li>
+                        <li><a href="/galleri" class={activeNav === 'galleri' ? 'active' : ''}>Galleri</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <slot />
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>Stallvägen 123</p>
+                    <p>456 78 Bygdeå</p>
+                    <p>Tel: 070-123 45 67</p>
+                    <p>E-post: info@stallviken.se</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Öppettider</h3>
+                    <p>Måndag - Fredag: 08:00 - 18:00</p>
+                    <p>Lördag - Söndag: 09:00 - 16:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Följ oss</h3>
+                    <p>Facebook: @stallvikensislandshastar</p>
+                    <p>Instagram: @stallviken</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stallvikens Islandshästar. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<style>
+  @import '../styles/global.css';
+</style>
+
+<script>
+  import '../scripts/main.js';
+</script>
