@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Hästar till salu - Stallvikens Islandshästar" activeNav="till-salu">
+<BaseLayout title="Våra hästar - Stallvikens Islandshästar" activeNav="till-salu">
   <style>
     .page-header {
       background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), url('/images/IMG_3400.jpeg');
@@ -165,17 +165,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       font-weight: 600;
     }
     
-    .purchase-info {
-      background-color: #e8f4f8;
-      padding: 30px;
+    .stable-info {
+      background-color: var(--light-bg);
+      padding: 40px;
       border-radius: 10px;
       margin-top: 40px;
-      border-left: 4px solid var(--primary-color);
+      text-align: center;
     }
     
-    .purchase-info h3 {
+    .stable-info h3 {
       color: var(--primary-color);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    
+    .stable-info p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.8;
+      color: var(--text-color);
     }
     
     .video-container {
@@ -247,18 +255,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .horse-specs {
         grid-template-columns: 1fr;
       }
-      
-      .sold-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
   </style>
 
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Hästar till salu</h1>
-        <p>Noga utvalda islandshästar med kvalitet och karaktär</p>
+        <h1>Våra hästar</h1>
+        <p>Möt våra fantastiska islandshästar på Stallvikens Islandshästar</p>
       </div>
     </section>
 
@@ -266,70 +270,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="horses-for-sale">
         <div class="horse-listing">
           <div class="horse-images">
-            <img src="/images/IMG_3401.jpeg" alt="Embla från Stallviken" class="main-image lightbox-trigger" id="main-image-1" data-fullsize="/images/IMG_3401.jpeg">
+            <img src="/images/IMG_3399.jpeg" alt="Órion från Tavelsjö" class="main-image lightbox-trigger" id="main-image-1" data-fullsize="/images/IMG_3399.jpeg">
             <div class="thumbnail-gallery">
-              <img src="/images/IMG_3401.jpeg" alt="Embla bild 1" class="thumbnail active" onclick="changeMainImage(1, 1)">
-              <img src="/images/IMG_3405.jpeg" alt="Embla bild 2" class="thumbnail" onclick="changeMainImage(1, 2)">
-              <img src="/images/IMG_3407.jpeg" alt="Embla bild 3" class="thumbnail" onclick="changeMainImage(1, 3)">
+              <img src="/images/IMG_3399.jpeg" alt="Órion bild 1" class="thumbnail active" onclick="changeMainImage(1, 1)">
+              <img src="/images/IMG_3400.jpeg" alt="Órion bild 2" class="thumbnail" onclick="changeMainImage(1, 2)">
+              <img src="/images/IMG_3401.jpeg" alt="Órion bild 3" class="thumbnail" onclick="changeMainImage(1, 3)">
             </div>
           </div>
           <div class="horse-details">
-            <h2>Embla från Stallviken</h2>
+            <h2>Órion från Tavelsjö</h2>
             <div class="horse-specs">
               <div class="spec-item">
                 <strong>Född:</strong>
-                <span>2015</span>
-              </div>
-              <div class="spec-item">
-                <strong>Kön:</strong>
-                <span>Sto</span>
-              </div>
-              <div class="spec-item">
-                <strong>Färg:</strong>
-                <span>Brun</span>
-              </div>
-              <div class="spec-item">
-                <strong>Mankhöjd:</strong>
-                <span>138 cm</span>
-              </div>
-              <div class="spec-item">
-                <strong>Gångarter:</strong>
-                <span>Fyrgångare</span>
-              </div>
-              <div class="spec-item">
-                <strong>Utbildning:</strong>
-                <span>Säker ridhäst</span>
-              </div>
-            </div>
-            <div class="horse-description">
-              <p>Embla är ett underbart sto med fantastisk karaktär. Hon är trygg och pålitlig både i skogen och på banan. Med sin mjuka tölt och bekväma trav är hon en riktig drömhäst för den som vill ha en allround-partner.</p>
-              <p>Embla har tävlat framgångsrikt i tölt T2 och passar utmärkt för ryttare som vill utvecklas inom gångartsridning. Hon är van vid barn och är alltid snäll och tålmodig.</p>
-            </div>
-            <div class="price-tag">
-              Pris: 85 000 kr
-            </div>
-            <div class="contact-seller">
-              <a href="/kontakt?subject=embla">Kontakta oss om Embla</a>
-              <a href="tel:070-123-45-67">Ring: 070-123 45 67</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="horse-listing">
-          <div class="horse-images">
-            <img src="/images/IMG_3408.jpeg" alt="Odin från Nordanvind" class="main-image lightbox-trigger" id="main-image-2" data-fullsize="/images/IMG_3408.jpeg">
-            <div class="thumbnail-gallery">
-              <img src="/images/IMG_3408.jpeg" alt="Odin bild 1" class="thumbnail active" onclick="changeMainImage(2, 1)">
-              <img src="/images/IMG_3409.jpeg" alt="Odin bild 2" class="thumbnail" onclick="changeMainImage(2, 2)">
-              <img src="/images/IMG_3410.jpeg" alt="Odin bild 3" class="thumbnail" onclick="changeMainImage(2, 3)">
-            </div>
-          </div>
-          <div class="horse-details">
-            <h2>Odin från Nordanvind</h2>
-            <div class="horse-specs">
-              <div class="spec-item">
-                <strong>Född:</strong>
-                <span>2012</span>
+                <span>2016</span>
               </div>
               <div class="spec-item">
                 <strong>Kön:</strong>
@@ -337,11 +290,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
               <div class="spec-item">
                 <strong>Färg:</strong>
-                <span>Svart</span>
+                <span>Fux</span>
               </div>
               <div class="spec-item">
                 <strong>Mankhöjd:</strong>
-                <span>142 cm</span>
+                <span>140 cm</span>
               </div>
               <div class="spec-item">
                 <strong>Gångarter:</strong>
@@ -349,41 +302,75 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
               <div class="spec-item">
                 <strong>Utbildning:</strong>
-                <span>Tävlingshäst</span>
+                <span>Avancerad ridhäst</span>
               </div>
             </div>
             <div class="horse-description">
-              <p>Odin är en kraftfull valack med imponerande gångarter. Hans pass är exceptionell och han har placerat sig på flera passlopp. Med sin starka vilja och atletiska förmåga är han perfekt för den ambitiösa ryttaren.</p>
-              <p>Trots sin kraft är Odin lätt att hantera och mycket samarbetsvillig. Han är van vid transporter och olika tävlingsmiljöer.</p>
-            </div>
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Odin i träning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="price-tag">
-              Pris: 120 000 kr
-            </div>
-            <div class="contact-seller">
-              <a href="/kontakt?subject=odin">Kontakta oss om Odin</a>
-              <a href="tel:070-123-45-67">Ring: 070-123 45 67</a>
+              <p>Órion är en stabil och trygg valack med utmärkta gångarter. Hans mjuka tölt och rytmiska pass gör honom till en favorit bland våra elever. Han är en perfekt lärare för den som vill utveckla sin gångartsridning.</p>
+              <p>Med sitt lugna temperament och sin förmåga att anpassa sig efter ryttarens nivå är Órion idealisk för både nybörjare och erfarna ryttare. Han älskar terrängridning och är alltid pålitlig.</p>
             </div>
           </div>
         </div>
 
         <div class="horse-listing">
           <div class="horse-images">
-            <img src="/images/IMG_3399.jpeg" alt="Astrid från Vikingagård" class="main-image lightbox-trigger" id="main-image-3" data-fullsize="/images/IMG_3399.jpeg">
+            <img src="/images/IMG_3402.jpeg" alt="Díva från Bräckeskog" class="main-image lightbox-trigger" id="main-image-2" data-fullsize="/images/IMG_3402.jpeg">
             <div class="thumbnail-gallery">
-              <img src="/images/IMG_3399.jpeg" alt="Astrid bild 1" class="thumbnail active" onclick="changeMainImage(3, 1)">
-              <img src="/images/IMG_3400.jpeg" alt="Astrid bild 2" class="thumbnail" onclick="changeMainImage(3, 2)">
-              <img src="/images/IMG_3407.jpeg" alt="Astrid bild 3" class="thumbnail" onclick="changeMainImage(3, 3)">
+              <img src="/images/IMG_3402.jpeg" alt="Díva bild 1" class="thumbnail active" onclick="changeMainImage(2, 1)">
+              <img src="/images/IMG_3403.jpeg" alt="Díva bild 2" class="thumbnail" onclick="changeMainImage(2, 2)">
+              <img src="/images/IMG_3404.jpeg" alt="Díva bild 3" class="thumbnail" onclick="changeMainImage(2, 3)">
             </div>
           </div>
           <div class="horse-details">
-            <h2>Astrid från Vikingagård</h2>
+            <h2>Díva från Bräckeskog</h2>
             <div class="horse-specs">
               <div class="spec-item">
                 <strong>Född:</strong>
-                <span>2018</span>
+                <span>2014</span>
+              </div>
+              <div class="spec-item">
+                <strong>Kön:</strong>
+                <span>Sto</span>
+              </div>
+              <div class="spec-item">
+                <strong>Färg:</strong>
+                <span>Svart</span>
+              </div>
+              <div class="spec-item">
+                <strong>Mankhöjd:</strong>
+                <span>137 cm</span>
+              </div>
+              <div class="spec-item">
+                <strong>Gångarter:</strong>
+                <span>Fyrgångare</span>
+              </div>
+              <div class="spec-item">
+                <strong>Utbildning:</strong>
+                <span>Tävlingshäst</span>
+              </div>
+            </div>
+            <div class="horse-description">
+              <p>Díva lever verkligen upp till sitt namn med sin eleganta framtoning och stolta hållning. Hon är en erfaren tävlingshäst med många framgångar inom tölt och fyrgång. Hennes precision och vilja att prestera gör henne till en utmärkt partner för ambitiösa ryttare.</p>
+              <p>Trots sin tävlingsbakgrund är Díva mycket tillgiven och samarbetsvillig. Hon har en underbar personlighet och är alltid ivrig att göra sitt bästa för sin ryttare.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="horse-listing">
+          <div class="horse-images">
+            <img src="/images/IMG_3405.jpeg" alt="Lilja från Stallviken" class="main-image lightbox-trigger" id="main-image-3" data-fullsize="/images/IMG_3405.jpeg">
+            <div class="thumbnail-gallery">
+              <img src="/images/IMG_3405.jpeg" alt="Lilja bild 1" class="thumbnail active" onclick="changeMainImage(3, 1)">
+              <img src="/images/IMG_3406.jpeg" alt="Lilja bild 2" class="thumbnail" onclick="changeMainImage(3, 2)">
+              <img src="/images/IMG_3407.jpeg" alt="Lilja bild 3" class="thumbnail" onclick="changeMainImage(3, 3)">
+            </div>
+          </div>
+          <div class="horse-details">
+            <h2>Lilja från Stallviken</h2>
+            <div class="horse-specs">
+              <div class="spec-item">
+                <strong>Född:</strong>
+                <span>2019</span>
               </div>
               <div class="spec-item">
                 <strong>Kön:</strong>
@@ -395,7 +382,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
               <div class="spec-item">
                 <strong>Mankhöjd:</strong>
-                <span>136 cm</span>
+                <span>135 cm</span>
               </div>
               <div class="spec-item">
                 <strong>Gångarter:</strong>
@@ -407,55 +394,149 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
             </div>
             <div class="horse-description">
-              <p>Astrid är ett ungt och lovande sto med fantastisk potential. Hon har nyligen påbörjat sin ridutbildning och visar redan prov på mjuka, bekväma gångarter och en vilja att samarbeta.</p>
-              <p>Med sitt lugna temperament och sin nyfikenhet är Astrid perfekt för någon som vill fortsätta utbildningen tillsammans med en ung häst. Hon har goda anlag för tölt och kommer säkert att utvecklas till en fin ridhäst.</p>
+              <p>Lilja är vårt unga stjärnskott med en ljuvlig personlighet. Hon är nyfiken, läraktig och har visat fantastiska anlag för tölt redan i ung ålder. Hennes mjuka gångarter och villiga sinne gör henne till en dröm att arbeta med.</p>
+              <p>Som ung häst har Lilja mycket att lära, men hennes positiva inställning och snabba inlärningsförmåga lovar gott för framtiden. Hon är perfekt för barn och ungdomar som vill växa tillsammans med sin häst.</p>
             </div>
-            <div class="price-tag">
-              Pris: Kontakta oss för pris
+          </div>
+        </div>
+
+        <div class="horse-listing">
+          <div class="horse-images">
+            <img src="/images/IMG_3408.jpeg" alt="Prins från Skälleryd" class="main-image lightbox-trigger" id="main-image-4" data-fullsize="/images/IMG_3408.jpeg">
+            <div class="thumbnail-gallery">
+              <img src="/images/IMG_3408.jpeg" alt="Prins bild 1" class="thumbnail active" onclick="changeMainImage(4, 1)">
+              <img src="/images/IMG_3409.jpeg" alt="Prins bild 2" class="thumbnail" onclick="changeMainImage(4, 2)">
+              <img src="/images/IMG_3410.jpeg" alt="Prins bild 3" class="thumbnail" onclick="changeMainImage(4, 3)">
             </div>
-            <div class="contact-seller">
-              <a href="/kontakt?subject=astrid">Kontakta oss om Astrid</a>
-              <a href="tel:070-123-45-67">Ring: 070-123 45 67</a>
+          </div>
+          <div class="horse-details">
+            <h2>Prins från Skälleryd</h2>
+            <div class="horse-specs">
+              <div class="spec-item">
+                <strong>Född:</strong>
+                <span>2013</span>
+              </div>
+              <div class="spec-item">
+                <strong>Kön:</strong>
+                <span>Hingst</span>
+              </div>
+              <div class="spec-item">
+                <strong>Färg:</strong>
+                <span>Brun</span>
+              </div>
+              <div class="spec-item">
+                <strong>Mankhöjd:</strong>
+                <span>143 cm</span>
+              </div>
+              <div class="spec-item">
+                <strong>Gångarter:</strong>
+                <span>Femgångare</span>
+              </div>
+              <div class="spec-item">
+                <strong>Utbildning:</strong>
+                <span>Avelhingst & ridhäst</span>
+              </div>
+            </div>
+            <div class="horse-description">
+              <p>Prins är en imponerande hingst med utmärkt exteriör och fantastiska gångarter. Han har en stark personlighet kombinerad med ett vänligt och tillgivet temperament. Som avelhingst har han producerat många framgångsrika avkommor.</p>
+              <p>Under sadel är Prins kraftfull men samtidigt lyhörd och samarbetsvillig. Hans spektakulära pass och flytande tölt gör honom till en upplevelse att rida för erfarna ryttare.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="horse-listing">
+          <div class="horse-images">
+            <img src="/images/IMG_3401.jpeg" alt="Lúsífer från Lysegården" class="main-image lightbox-trigger" id="main-image-5" data-fullsize="/images/IMG_3401.jpeg">
+            <div class="thumbnail-gallery">
+              <img src="/images/IMG_3401.jpeg" alt="Lúsífer bild 1" class="thumbnail active" onclick="changeMainImage(5, 1)">
+              <img src="/images/IMG_3402.jpeg" alt="Lúsífer bild 2" class="thumbnail" onclick="changeMainImage(5, 2)">
+              <img src="/images/IMG_3403.jpeg" alt="Lúsífer bild 3" class="thumbnail" onclick="changeMainImage(5, 3)">
+            </div>
+          </div>
+          <div class="horse-details">
+            <h2>Lúsífer från Lysegården</h2>
+            <div class="horse-specs">
+              <div class="spec-item">
+                <strong>Född:</strong>
+                <span>2011</span>
+              </div>
+              <div class="spec-item">
+                <strong>Kön:</strong>
+                <span>Valack</span>
+              </div>
+              <div class="spec-item">
+                <strong>Färg:</strong>
+                <span>Mörkfux</span>
+              </div>
+              <div class="spec-item">
+                <strong>Mankhöjd:</strong>
+                <span>141 cm</span>
+              </div>
+              <div class="spec-item">
+                <strong>Gångarter:</strong>
+                <span>Femgångare</span>
+              </div>
+              <div class="spec-item">
+                <strong>Utbildning:</strong>
+                <span>Erfaren lektionshäst</span>
+              </div>
+            </div>
+            <div class="horse-description">
+              <p>Lúsífer är vår erfarna lärare med många års erfarenhet av att ta hand om ryttare i alla åldrar. Hans tålamod och lugn är legendariskt, och han har lärt otaliga ryttare konsten att tölt. Trots sitt dramatiska namn är han den snällaste hästen du kan tänka dig.</p>
+              <p>Med sin stabila personlighet och pålitliga natur är Lúsífer ovärderlig i vår verksamhet. Han anpassar sig perfekt efter ryttarens förmåga och ger alltid en trygg och lärorik upplevelse.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="horse-listing">
+          <div class="horse-images">
+            <img src="/images/IMG_3404.jpeg" alt="Efa frá Syðra-Skörðugili" class="main-image lightbox-trigger" id="main-image-6" data-fullsize="/images/IMG_3404.jpeg">
+            <div class="thumbnail-gallery">
+              <img src="/images/IMG_3404.jpeg" alt="Efa bild 1" class="thumbnail active" onclick="changeMainImage(6, 1)">
+              <img src="/images/IMG_3405.jpeg" alt="Efa bild 2" class="thumbnail" onclick="changeMainImage(6, 2)">
+              <img src="/images/IMG_3406.jpeg" alt="Efa bild 3" class="thumbnail" onclick="changeMainImage(6, 3)">
+            </div>
+          </div>
+          <div class="horse-details">
+            <h2>Efa frá Syðra-Skörðugili</h2>
+            <div class="horse-specs">
+              <div class="spec-item">
+                <strong>Född:</strong>
+                <span>2017</span>
+              </div>
+              <div class="spec-item">
+                <strong>Kön:</strong>
+                <span>Sto</span>
+              </div>
+              <div class="spec-item">
+                <strong>Färg:</strong>
+                <span>Skimmel</span>
+              </div>
+              <div class="spec-item">
+                <strong>Mankhöjd:</strong>
+                <span>138 cm</span>
+              </div>
+              <div class="spec-item">
+                <strong>Gångarter:</strong>
+                <span>Fyrgångare</span>
+              </div>
+              <div class="spec-item">
+                <strong>Utbildning:</strong>
+                <span>Importerad från Island</span>
+              </div>
+            </div>
+            <div class="horse-description">
+              <p>Efa är vår senaste import direkt från Island, med äkta isländsk anda och temperament. Hon har den typiska isländska hästens mod och självförtroende, kombinerat med en vänlig och nyfiken personlighet. Hennes tölt är exceptionellt bekväm och rytmisk.</p>
+              <p>Som relativt nyimporterad är Efa fortfarande under utbildning i svensk ridkultur, men hon visar redan prov på att bli en fantastisk allroundhäst. Hennes starka band till naturen gör henne perfekt för långa turer i skog och mark.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="purchase-info">
-        <h3>Information om köp</h3>
-        <ul>
-          <li><strong>Provridning:</strong> Vi rekommenderar alltid provridning innan köp. Första provridningen kostar 500 kr, vilket dras av vid eventuellt köp.</li>
-          <li><strong>Veterinärbesiktning:</strong> Vi välkomnar veterinärbesiktning på köparens bekostnad.</li>
-          <li><strong>Transport:</strong> Vi kan hjälpa till att ordna transport till din hemort.</li>
-          <li><strong>Försäkring:</strong> Vi rekommenderar att du tecknar försäkring direkt vid köp.</li>
-          <li><strong>Uppföljning:</strong> Vi finns alltid tillgängliga för råd och stöd efter köpet.</li>
-        </ul>
-      </div>
-
-      <div class="sold-horses">
-        <h2>Tidigare sålda hästar - Referenser</h2>
-        <div class="sold-grid">
-          <div class="sold-horse">
-            <img src="/images/IMG_3405.jpeg" alt="Freyr">
-            <p>Freyr från Stallviken</p>
-            <small>Såld 2023</small>
-          </div>
-          <div class="sold-horse">
-            <img src="/images/IMG_3409.jpeg" alt="Sif">
-            <p>Sif från Nordgården</p>
-            <small>Såld 2023</small>
-          </div>
-          <div class="sold-horse">
-            <img src="/images/IMG_3410.jpeg" alt="Balder">
-            <p>Balder från Vikingstad</p>
-            <small>Såld 2022</small>
-          </div>
-          <div class="sold-horse">
-            <img src="/images/IMG_3401.jpeg" alt="Idun">
-            <p>Idun från Stallviken</p>
-            <small>Såld 2022</small>
-          </div>
-        </div>
+      <div class="stable-info">
+        <h3>Om våra hästar</h3>
+        <p>Våra hästar är en viktig del av verksamheten på Stallvikens Islandshästar. Varje häst har sin egen personlighet och historia, och vi är stolta över att kunna erbjuda våra elever möjligheten att rida på dessa fantastiska djur.</p>
+        <p>Alla våra hästar får regelbunden träning, veterinärvård och hovvård för att säkerställa deras välbefinnande. Vi lägger stor vikt vid att matcha rätt häst med rätt ryttare för att skapa en trygg och givande upplevelse för alla.</p>
       </div>
     </section>
   </main>
@@ -467,9 +548,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       
       // Update main image
       const horseImages = {
-        1: ['/images/IMG_3401.jpeg', '/images/IMG_3405.jpeg', '/images/IMG_3407.jpeg'],
-        2: ['/images/IMG_3408.jpeg', '/images/IMG_3409.jpeg', '/images/IMG_3410.jpeg'],
-        3: ['/images/IMG_3399.jpeg', '/images/IMG_3400.jpeg', '/images/IMG_3407.jpeg']
+        1: ['/images/IMG_3399.jpeg', '/images/IMG_3400.jpeg', '/images/IMG_3401.jpeg'],
+        2: ['/images/IMG_3402.jpeg', '/images/IMG_3403.jpeg', '/images/IMG_3404.jpeg'],
+        3: ['/images/IMG_3405.jpeg', '/images/IMG_3406.jpeg', '/images/IMG_3407.jpeg'],
+        4: ['/images/IMG_3408.jpeg', '/images/IMG_3409.jpeg', '/images/IMG_3410.jpeg'],
+        5: ['/images/IMG_3401.jpeg', '/images/IMG_3402.jpeg', '/images/IMG_3403.jpeg'],
+        6: ['/images/IMG_3404.jpeg', '/images/IMG_3405.jpeg', '/images/IMG_3406.jpeg']
       };
       mainImage.src = horseImages[horseId][imageNum-1];
       mainImage.dataset.fullsize = horseImages[horseId][imageNum-1];
