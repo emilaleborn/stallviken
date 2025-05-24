@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Bildgalleri - Stallvikens Islandshästar" activeNav="galleri">
+<BaseLayout title="Våran anläggning - Stallvikens Islandshästar" activeNav="galleri">
   <style>
     .page-header {
       background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), url('/images/IMG_3399.jpeg');
@@ -231,118 +231,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Bildgalleri</h1>
-        <p>Se bilder från vår verksamhet</p>
+        <h1>Våran anläggning</h1>
+        <p>Se bilder från vår anläggning</p>
       </div>
     </section>
 
     <section class="container">
       <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">Alla bilder</button>
-        <button class="filter-btn" data-filter="training">Träning</button>
-        <button class="filter-btn" data-filter="courses">Kurser</button>
-        <button class="filter-btn" data-filter="daily">Vardag på gården</button>
-        <button class="filter-btn" data-filter="horses">Hästar</button>
-        <button class="filter-btn" data-filter="nature">Natur</button>
+        <button class="filter-btn active" data-filter="all">Våran anläggning</button>
+        
       </div>
 
       <div class="gallery-grid" id="gallery">
         <div class="gallery-item lightbox-trigger" data-category="training" data-fullsize="/images/IMG_3399.jpeg">
-          <img src="/images/IMG_3399.jpeg" alt="Töltträning på ovalbanan">
+          <img src="/images/IMG_3399.jpeg" alt="Stallvikens Islandshästar">
           <div class="gallery-item-overlay">
-            <h3>Töltträning</h3>
-            <p>Träning på ovalbanan</p>
+            <h3>Stallvikens Islandshästar</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="horses" data-fullsize="/images/IMG_3400.jpeg">
-          <img src="/images/IMG_3400.jpeg" alt="Freyja i hagen">
+          <img src="/images/IMG_3400.jpeg" alt="En av våra hagar i morgonsolen">
           <div class="gallery-item-overlay">
-            <h3>Freyja</h3>
-            <p>Vår kära lektionshäst</p>
+            <h3>En av våra hagar i morgonsolen</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="courses" data-fullsize="/images/IMG_3401.jpeg">
-          <img src="/images/IMG_3401.jpeg" alt="Deltagare på helgkurs">
+          <img src="/images/IMG_3401.jpeg" alt="Sadelkammaren">
           <div class="gallery-item-overlay">
-            <h3>Helgkurs</h3>
-            <p>Gångartsanalys med Anna</p>
+            <h3>Sadelkammaren</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="nature" data-fullsize="/images/IMG_3405.jpeg">
-          <img src="/images/IMG_3405.jpeg" alt="Morgonritt i skogen">
+          <img src="/images/IMG_3405.jpeg" alt="Stallet">
           <div class="gallery-item-overlay">
-            <h3>Morgonritt</h3>
-            <p>Vacker morgon i skogen</p>
+            <h3>Stallet</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="daily" data-fullsize="/images/IMG_3407.jpeg">
           <img src="/images/IMG_3407.jpeg" alt="Mysig stund i stallet">
           <div class="gallery-item-overlay">
-            <h3>Stallmys</h3>
-            <p>Vardagslycka</p>
+            <h3>Uppställningsplats</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="training" data-fullsize="/images/IMG_3408.jpeg">
-          <img src="/images/IMG_3408.jpeg" alt="Dressyrträning">
+          <img src="/images/IMG_3408.jpeg" alt="Glada hästar i sommarhagen">
           <div class="gallery-item-overlay">
-            <h3>Dressyrträning</h3>
-            <p>Finslipning av rörelser</p>
+            <h3>Glada hästar i sommarhagen</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="horses" data-fullsize="/images/IMG_3409.jpeg">
-          <img src="/images/IMG_3409.jpeg" alt="Thor från Nordgården">
+          <img src="/images/IMG_3409.jpeg" alt="Solnedgång">
           <div class="gallery-item-overlay">
-            <h3>Thor</h3>
-            <p>Kraftfull femgångare</p>
+            <h3>Solnedgång</h3>
+            <p></p>
           </div>
         </div>
 
         <div class="gallery-item lightbox-trigger" data-category="courses" data-fullsize="/images/IMG_3410.jpeg">
-          <img src="/images/IMG_3410.jpeg" alt="Barnkurs i sommar">
+          <img src="/images/IMG_3410.jpeg" alt="Lighallen">
           <div class="gallery-item-overlay">
-            <h3>Barnkurs</h3>
-            <p>Glädje och lärande</p>
+            <h3>Ligghallen</h3>
+            <p></p>
           </div>
         </div>
 
-        <div class="gallery-item lightbox-trigger" data-category="nature" data-fullsize="/images/IMG_3399.jpeg">
-          <img src="/images/IMG_3399.jpeg" alt="Solnedgång över hagarna">
-          <div class="gallery-item-overlay">
-            <h3>Solnedgång</h3>
-            <p>Magisk kväll vid stallet</p>
-          </div>
-        </div>
+        
 
-        <div class="gallery-item lightbox-trigger" data-category="daily" data-fullsize="/images/IMG_3401.jpeg">
-          <img src="/images/IMG_3401.jpeg" alt="Morgonens utfodring">
-          <div class="gallery-item-overlay">
-            <h3>Utfodring</h3>
-            <p>Morgonrutiner</p>
-          </div>
-        </div>
+        
 
-        <div class="gallery-item lightbox-trigger" data-category="training" data-fullsize="/images/IMG_3407.jpeg">
-          <img src="/images/IMG_3407.jpeg" alt="Hoppträning">
-          <div class="gallery-item-overlay">
-            <h3>Hoppträning</h3>
-            <p>Övning ger färdighet</p>
-          </div>
-        </div>
+        
 
-        <div class="gallery-item lightbox-trigger" data-category="horses" data-fullsize="/images/IMG_3408.jpeg">
-          <img src="/images/IMG_3408.jpeg" alt="Saga från Vikingstad">
-          <div class="gallery-item-overlay">
-            <h3>Saga</h3>
-            <p>Elegant isabell</p>
-          </div>
-        </div>
-      </div>
+        
 
       <div class="load-more">
         <button onclick="loadMoreImages()">Ladda fler bilder</button>
