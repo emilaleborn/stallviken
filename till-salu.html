@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Islandshästar till salu - väl utbildade och karaktärsstarka hästar från Stallviken">
+    <title>Hästar till salu - Stallvikens Islandshästar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), url('https://via.placeholder.com/1920x400/8B4513/FFFFFF?text=Hästar+till+salu');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .horses-for-sale {
+            display: grid;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .horse-listing {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        .horse-images {
+            position: relative;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .thumbnail-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--light-bg);
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .thumbnail:hover,
+        .thumbnail.active {
+            opacity: 1;
+        }
+        
+        .horse-details {
+            padding: 30px;
+        }
+        
+        .horse-details h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .horse-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .spec-item strong {
+            color: var(--primary-color);
+            min-width: 100px;
+        }
+        
+        .horse-description {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .price-tag {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .contact-seller {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-seller a {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-seller a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .sold-horses {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+        }
+        
+        .sold-horses h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .sold-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .sold-horse {
+            text-align: center;
+        }
+        
+        .sold-horse img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            filter: grayscale(50%);
+        }
+        
+        .sold-horse p {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .purchase-info {
+            background-color: #e8f4f8;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .purchase-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        
+        .lightbox-caption {
+            color: white;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .horse-listing {
+                grid-template-columns: 1fr;
+            }
+            
+            .horse-specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .sold-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Stallvikens Islandshästar</h1>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="index.html">🏠 Hem</a></li>
+                        <li><a href="utbildning.html">🐴 Utbildning & träning</a></li>
+                        <li><a href="om-oss.html">ℹ️ Om oss</a></li>
+                        <li><a href="kontakt.html">📞 Kontakt</a></li>
+                        <li><a href="till-salu.html" class="active">🐎 Hästar till salu</a></li>
+                        <li><a href="blogg.html">📰 Blogg</a></li>
+                        <li><a href="galleri.html">📸 Galleri</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Hästar till salu</h1>
+                <p>Noga utvalda islandshästar med kvalitet och karaktär</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="horses-for-sale">
+                <div class="horse-listing">
+                    <div class="horse-images">
+                        <img src="https://via.placeholder.com/600x400/8B4513/FFFFFF?text=Embla+1" alt="Embla från Stallviken" class="main-image lightbox-trigger" id="main-image-1" data-fullsize="https://via.placeholder.com/1200x800/8B4513/FFFFFF?text=Embla+1">
+                        <div class="thumbnail-gallery">
+                            <img src="https://via.placeholder.com/200x150/8B4513/FFFFFF?text=Embla+1" alt="Embla bild 1" class="thumbnail active" onclick="changeMainImage(1, 1)">
+                            <img src="https://via.placeholder.com/200x150/654321/FFFFFF?text=Embla+2" alt="Embla bild 2" class="thumbnail" onclick="changeMainImage(1, 2)">
+                            <img src="https://via.placeholder.com/200x150/8B6914/FFFFFF?text=Embla+3" alt="Embla bild 3" class="thumbnail" onclick="changeMainImage(1, 3)">
+                        </div>
+                    </div>
+                    <div class="horse-details">
+                        <h2>Embla från Stallviken</h2>
+                        <div class="horse-specs">
+                            <div class="spec-item">
+                                <strong>Född:</strong>
+                                <span>2015</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Kön:</strong>
+                                <span>Sto</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Färg:</strong>
+                                <span>Brun</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Mankhöjd:</strong>
+                                <span>138 cm</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Gångarter:</strong>
+                                <span>Fyrgångare</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Utbildning:</strong>
+                                <span>Säker ridhäst</span>
+                            </div>
+                        </div>
+                        <div class="horse-description">
+                            <p>Embla är ett underbart sto med fantastisk karaktär. Hon är trygg och pålitlig både i skogen och på banan. Med sin mjuka tölt och bekväma trav är hon en riktig drömhäst för den som vill ha en allround-partner.</p>
+                            <p>Embla har tävlat framgångsrikt i tölt T2 och passar utmärkt för ryttare som vill utvecklas inom gångartsridning. Hon är van vid barn och är alltid snäll och tålmodig.</p>
+                        </div>
+                        <div class="price-tag">
+                            Pris: 85 000 kr
+                        </div>
+                        <div class="contact-seller">
+                            <a href="kontakt.html?subject=embla">Kontakta oss om Embla</a>
+                            <a href="tel:070-123-45-67">Ring: 070-123 45 67</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horse-listing">
+                    <div class="horse-images">
+                        <img src="https://via.placeholder.com/600x400/654321/FFFFFF?text=Odin+1" alt="Odin från Nordanvind" class="main-image lightbox-trigger" id="main-image-2" data-fullsize="https://via.placeholder.com/1200x800/654321/FFFFFF?text=Odin+1">
+                        <div class="thumbnail-gallery">
+                            <img src="https://via.placeholder.com/200x150/654321/FFFFFF?text=Odin+1" alt="Odin bild 1" class="thumbnail active" onclick="changeMainImage(2, 1)">
+                            <img src="https://via.placeholder.com/200x150/8B4513/FFFFFF?text=Odin+2" alt="Odin bild 2" class="thumbnail" onclick="changeMainImage(2, 2)">
+                            <img src="https://via.placeholder.com/200x150/8B6914/FFFFFF?text=Odin+3" alt="Odin bild 3" class="thumbnail" onclick="changeMainImage(2, 3)">
+                        </div>
+                    </div>
+                    <div class="horse-details">
+                        <h2>Odin från Nordanvind</h2>
+                        <div class="horse-specs">
+                            <div class="spec-item">
+                                <strong>Född:</strong>
+                                <span>2012</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Kön:</strong>
+                                <span>Valack</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Färg:</strong>
+                                <span>Svart</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Mankhöjd:</strong>
+                                <span>142 cm</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Gångarter:</strong>
+                                <span>Femgångare</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Utbildning:</strong>
+                                <span>Tävlingshäst</span>
+                            </div>
+                        </div>
+                        <div class="horse-description">
+                            <p>Odin är en kraftfull valack med imponerande gångarter. Hans pass är exceptionell och han har placerat sig på flera passlopp. Med sin starka vilja och atletiska förmåga är han perfekt för den ambitiösa ryttaren.</p>
+                            <p>Trots sin kraft är Odin lätt att hantera och mycket samarbetsvillig. Han är van vid transporter och olika tävlingsmiljöer.</p>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Odin i träning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="price-tag">
+                            Pris: 120 000 kr
+                        </div>
+                        <div class="contact-seller">
+                            <a href="kontakt.html?subject=odin">Kontakta oss om Odin</a>
+                            <a href="tel:070-123-45-67">Ring: 070-123 45 67</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horse-listing">
+                    <div class="horse-images">
+                        <img src="https://via.placeholder.com/600x400/8B6914/FFFFFF?text=Astrid+1" alt="Astrid från Vikingagård" class="main-image lightbox-trigger" id="main-image-3" data-fullsize="https://via.placeholder.com/1200x800/8B6914/FFFFFF?text=Astrid+1">
+                        <div class="thumbnail-gallery">
+                            <img src="https://via.placeholder.com/200x150/8B6914/FFFFFF?text=Astrid+1" alt="Astrid bild 1" class="thumbnail active" onclick="changeMainImage(3, 1)">
+                            <img src="https://via.placeholder.com/200x150/8B4513/FFFFFF?text=Astrid+2" alt="Astrid bild 2" class="thumbnail" onclick="changeMainImage(3, 2)">
+                            <img src="https://via.placeholder.com/200x150/654321/FFFFFF?text=Astrid+3" alt="Astrid bild 3" class="thumbnail" onclick="changeMainImage(3, 3)">
+                        </div>
+                    </div>
+                    <div class="horse-details">
+                        <h2>Astrid från Vikingagård</h2>
+                        <div class="horse-specs">
+                            <div class="spec-item">
+                                <strong>Född:</strong>
+                                <span>2018</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Kön:</strong>
+                                <span>Sto</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Färg:</strong>
+                                <span>Isabell</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Mankhöjd:</strong>
+                                <span>136 cm</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Gångarter:</strong>
+                                <span>Fyrgångare</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Utbildning:</strong>
+                                <span>Grundutbildad</span>
+                            </div>
+                        </div>
+                        <div class="horse-description">
+                            <p>Astrid är ett ungt och lovande sto med fantastisk potential. Hon har nyligen påbörjat sin ridutbildning och visar redan prov på mjuka, bekväma gångarter och en vilja att samarbeta.</p>
+                            <p>Med sitt lugna temperament och sin nyfikenhet är Astrid perfekt för någon som vill fortsätta utbildningen tillsammans med en ung häst. Hon har goda anlag för tölt och kommer säkert att utvecklas till en fin ridhäst.</p>
+                        </div>
+                        <div class="price-tag">
+                            Pris: Kontakta oss för pris
+                        </div>
+                        <div class="contact-seller">
+                            <a href="kontakt.html?subject=astrid">Kontakta oss om Astrid</a>
+                            <a href="tel:070-123-45-67">Ring: 070-123 45 67</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="purchase-info">
+                <h3>Information om köp</h3>
+                <ul>
+                    <li><strong>Provridning:</strong> Vi rekommenderar alltid provridning innan köp. Första provridningen kostar 500 kr, vilket dras av vid eventuellt köp.</li>
+                    <li><strong>Veterinärbesiktning:</strong> Vi välkomnar veterinärbesiktning på köparens bekostnad.</li>
+                    <li><strong>Transport:</strong> Vi kan hjälpa till att ordna transport till din hemort.</li>
+                    <li><strong>Försäkring:</strong> Vi rekommenderar att du tecknar försäkring direkt vid köp.</li>
+                    <li><strong>Uppföljning:</strong> Vi finns alltid tillgängliga för råd och stöd efter köpet.</li>
+                </ul>
+            </div>
+
+            <div class="sold-horses">
+                <h2>Tidigare sålda hästar - Referenser</h2>
+                <div class="sold-grid">
+                    <div class="sold-horse">
+                        <img src="https://via.placeholder.com/300x200/999999/FFFFFF?text=Freyr" alt="Freyr">
+                        <p>Freyr från Stallviken</p>
+                        <small>Såld 2023</small>
+                    </div>
+                    <div class="sold-horse">
+                        <img src="https://via.placeholder.com/300x200/999999/FFFFFF?text=Sif" alt="Sif">
+                        <p>Sif från Nordgården</p>
+                        <small>Såld 2023</small>
+                    </div>
+                    <div class="sold-horse">
+                        <img src="https://via.placeholder.com/300x200/999999/FFFFFF?text=Balder" alt="Balder">
+                        <p>Balder från Vikingstad</p>
+                        <small>Såld 2022</small>
+                    </div>
+                    <div class="sold-horse">
+                        <img src="https://via.placeholder.com/300x200/999999/FFFFFF?text=Idun" alt="Idun">
+                        <p>Idun från Stallviken</p>
+                        <small>Såld 2022</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Stallvikens Islandshästar</h3>
+                    <p>Din partner för islandshästutbildning</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>📧 info@stallviken.se</p>
+                    <p>📞 070-123 45 67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Följ oss</h3>
+                    <p>Facebook | Instagram</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stallvikens Islandshästar. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeMainImage(horseId, imageNum) {
+            const mainImage = document.getElementById('main-image-' + horseId);
+            const thumbnails = mainImage.parentElement.querySelectorAll('.thumbnail');
+            
+            // Update main image
+            const colors = ['8B4513', '654321', '8B6914'];
+            mainImage.src = `https://via.placeholder.com/600x400/${colors[imageNum-1]}/FFFFFF?text=${mainImage.alt.split(' ')[0]}+${imageNum}`;
+            mainImage.dataset.fullsize = `https://via.placeholder.com/1200x800/${colors[imageNum-1]}/FFFFFF?text=${mainImage.alt.split(' ')[0]}+${imageNum}`;
+            
+            // Update active thumbnail
+            thumbnails.forEach((thumb, index) => {
+                if (index === imageNum - 1) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize lightbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initLightbox();
+        });
+    </script>
+</body>
+</html>
