@@ -26,41 +26,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       background-color: var(--light-bg);
     }
     
-    .timeline {
-      position: relative;
-      padding: 20px 0;
-    }
-    
-    .timeline-item {
-      margin-bottom: 30px;
-      padding-left: 40px;
-      position: relative;
-    }
-    
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 5px;
-      width: 15px;
-      height: 15px;
-      background-color: var(--primary-color);
-      border-radius: 50%;
-    }
-    
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: 17px;
-      top: 20px;
-      width: 2px;
-      height: calc(100% + 10px);
-      background-color: var(--primary-color);
-    }
-    
-    .timeline-item:last-child::after {
-      display: none;
-    }
     
     .team-member {
       text-align: center;
@@ -150,33 +115,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <section class="about-section">
-      <div class="container">
-        <h2>Vår historia</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>1995 - Allt började</h3>
-            <p>Stallvikens Islandshästar grundades av Anna Eriksson med en vision om att sprida kärleken till islandshästar och deras unika gångarter.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>2001 - Expansion</h3>
-            <p>Vi utökade verksamheten med fler hästar och byggde en ny ridbana för att kunna ta emot fler elever.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>2010 - Tävlingsframgångar</h3>
-            <p>Våra elever och hästar började göra sig kända på tävlingsbanorna runt om i Sverige.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>2020 - Modern anläggning</h3>
-            <p>Renovering av stallet och installation av ny belysning på utebanan för året-runt-träning.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Idag</h3>
-            <p>Vi fortsätter att utvecklas och erbjuda högkvalitativ utbildning för både häst och ryttare.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="about-section">
       <div class="container">
