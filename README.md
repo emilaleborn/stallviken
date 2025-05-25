@@ -137,7 +137,7 @@ The built site will be in the `dist/` folder and can be deployed to any static h
 - Google Fonts (Playfair Display & Open Sans)
 
 ## 📧 Contact
-For questions about the website, contact: info@stallviken.se
+For questions about the website, contact: stallvikensislandshastar@gmail.com
 
 
 
